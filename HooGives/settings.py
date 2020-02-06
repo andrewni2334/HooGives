@@ -75,10 +75,14 @@ WSGI_APPLICATION = 'HooGives.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cs4501',
+        'USER': 'www',
+        'PASSWORD': '$3cureUS',
+        'HOST': 'db',
     }
 }
+
 
 
 # Password validation
