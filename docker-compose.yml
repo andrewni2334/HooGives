@@ -6,7 +6,7 @@ services:
     external_links:
       - mysql:db
     volumes:
-      - /HooGives:/app
+      - ~/cs4501/app:/app
     ports:
       - "8001:8000"
     networks:
