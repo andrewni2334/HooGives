@@ -1,0 +1,220 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$150000$6AtrI4mlpz0j$Ff59QvdDiNWA6zurgkBjwCJP4wjiQ7Qy255thj+/1gY=",
+        "last_login": "2020-02-07T03:25:16.995Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "navster8888@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-02-07T03:25:08.324Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "9it3nvyh7whc7gaz7h13kynjvgeli5vy",
+    "fields": {
+        "session_data": "MGI5MGYzMjk3M2I2MDhmOGFlMDQzYWRmNWQzZjNlZTA1YWI1OTk2Nzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiYTFmNDFlMTNjN2JiMGZhNjM1ZTliZTgxNTZhYzVjNTk4MzU4ZWRiNSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
+        "expire_date": "2020-02-21T03:25:17.002Z"
+    }
+},
+{
+    "model": "marketplace.user",
+    "pk": "271c419b-b0ca-4637-8ddc-80778acd10b5",
+    "fields": {
+        "first_name": "John",
+        "last_name": "Smith",
+        "phone_number": "4444444444",
+        "email": "Johnsmith@gmail.com"
+    }
+},
+{
+    "model": "marketplace.user",
+    "pk": "5dcb1520-b6f4-4083-8b3d-08f024c67e3b",
+    "fields": {
+        "first_name": "Kush",
+        "last_name": "Patel",
+        "phone_number": "5555555555",
+        "email": "kushpatel@gmail.com"
+    }
+},
+{
+    "model": "marketplace.user",
+    "pk": "8745b5eb-ba7c-498e-b97a-0c34a8da8177",
+    "fields": {
+        "first_name": "Andrew",
+        "last_name": "Ni",
+        "phone_number": "7777777777",
+        "email": "andrewni@gmail.com"
+    }
+},
+{
+    "model": "marketplace.user",
+    "pk": "94745bf6-8ce6-4259-aa34-94d8d2ea8cd3",
+    "fields": {
+        "first_name": "Navid",
+        "last_name": "Jahromi",
+        "phone_number": "7777777777",
+        "email": "nj5sb@virginia.edu"
+    }
+},
+{
+    "model": "marketplace.event",
+    "pk": "79712818-57d0-44ea-bfb1-582f8f64cf3c",
+    "fields": {
+        "event_name": "Surf n Turf",
+        "event_date": "2020-03-05T10:30:00Z",
+        "event_description": "All you can eat lobster and steaks! $10 at the door!"
+    }
+},
+{
+    "model": "marketplace.event",
+    "pk": "be750094-b1d6-48d0-8dee-4e86389141ea",
+    "fields": {
+        "event_name": "Battle of the Bands",
+        "event_date": "2022-02-22T07:30:00Z",
+        "event_description": "Come out and watch bands battle it out! All proceeds go to a local mental health clinic in charlottesville."
+    }
+},
+{
+    "model": "marketplace.event",
+    "pk": "ee921773-7081-4b78-8206-54033b889e07",
+    "fields": {
+        "event_name": "Pig Roast",
+        "event_date": "2020-02-20T10:30:00Z",
+        "event_description": "Come one come all to the annual pig roast! $5 for a wristband and $15 for a t-shirt."
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-02-07T03:25:29.730Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "user"
+        ],
+        "object_id": "94745bf6-8ce6-4259-aa34-94d8d2ea8cd3",
+        "object_repr": "User object (94745bf6-8ce6-4259-aa34-94d8d2ea8cd3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-02-07T03:25:44.373Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "user"
+        ],
+        "object_id": "5dcb1520-b6f4-4083-8b3d-08f024c67e3b",
+        "object_repr": "User object (5dcb1520-b6f4-4083-8b3d-08f024c67e3b)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-02-07T03:25:54.500Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "user"
+        ],
+        "object_id": "8745b5eb-ba7c-498e-b97a-0c34a8da8177",
+        "object_repr": "User object (8745b5eb-ba7c-498e-b97a-0c34a8da8177)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2020-02-07T03:26:09.023Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "user"
+        ],
+        "object_id": "271c419b-b0ca-4637-8ddc-80778acd10b5",
+        "object_repr": "User object (271c419b-b0ca-4637-8ddc-80778acd10b5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2020-02-07T03:26:24.596Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "event"
+        ],
+        "object_id": "be750094-b1d6-48d0-8dee-4e86389141ea",
+        "object_repr": "Event object (be750094-b1d6-48d0-8dee-4e86389141ea)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2020-02-07T03:26:33.259Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "event"
+        ],
+        "object_id": "ee921773-7081-4b78-8206-54033b889e07",
+        "object_repr": "Event object (ee921773-7081-4b78-8206-54033b889e07)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2020-02-07T03:26:43.993Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "marketplace",
+            "event"
+        ],
+        "object_id": "79712818-57d0-44ea-bfb1-582f8f64cf3c",
+        "object_repr": "Event object (79712818-57d0-44ea-bfb1-582f8f64cf3c)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]
