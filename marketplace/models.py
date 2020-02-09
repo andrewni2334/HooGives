@@ -9,7 +9,7 @@ class User(models.Model):
     email = models.CharField(max_length = 100)
 
 class Event(models.Model):
-    event_id = models.UUIDField(primary_key=True, default = uuid.uuid4, editable = False, unique = True)
+    event_id = models.UUIDField(primary_key=True, default = uuid.uuid4, unique = True)
     event_name = models.CharField(max_length = 100)
     event_date = models.DateTimeField('date of event')
     event_description = models.CharField(max_length = 5000)

@@ -56,3 +56,49 @@ def user_api(request):
             
     return JsonResponse(some_data_to_dump)
 
+
+@csrf_exempt
+def event_api(request):
+    some_data_to_dump = {}
+    if request.method == 'POST':
+        event_id = request.POST.get('event_id')
+        try:
+            uuid.UUID(str(event_id))
+            if event_id:
+                if Event.objects.filter(pk = event_id).count() != 0:
+                    event = Event.objects.get(pk = event_id )
+                    
+                    event_name = request.POST.get('event_name')
+                    if event_name:
+                        event.event_name = event_name
+                    event_date = request.POST.get('event_date')
+                    if event_date:
+                        event.event_date = event_date
+
+                    event_description = request.POST.get("event_description")
+                    if event_description:
+                        event.event_description = event_description
+                    
+                   
+                    event.save()
+                    some_data_to_dump = model_to_dict(event)
+                else:
+                    some_data_to_dump["Error:"] = "Invalid Event ID: no event found to update"
+        except ValueError:
+            some_data_to_dump["Error:"] = "Invalid Event ID: no event found to retrieve info"
+
+    if request.method == "GET":
+        event_id = request.GET.get('event_id')
+        try:
+            uuid.UUID(str(event_id))
+            if event_id:
+                    event = Event.objects.get(pk = event_id )
+                    some_data_to_dump = model_to_dict(event)
+            else:
+                    some_data_to_dump["Error:"] = "Invalid Event ID: no event found to retrieve info"
+        except ValueError:
+            some_data_to_dump["Error:"] = "Invalid Event ID: no user found to retrieve info"
+       
+            
+    return JsonResponse(some_data_to_dump)
+
