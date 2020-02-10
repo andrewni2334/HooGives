@@ -172,3 +172,50 @@ def event_api(request):
             
     return JsonResponse(some_data_to_dump)
 
+@csrf_exempt
+def event_create_api(request):
+    some_data_to_dump = {}
+    if request.method == 'POST':     
+        try:
+            event_name = request.POST.get('event_name')      
+            event_date = request.POST.get('event_date')            
+            event_description = request.POST.get("event_description")            
+            some_data_to_dump["values"] = [event_name , event_date , event_description]
+
+            if(event_name and event_date and event_description):
+                event = Event.objects.create(
+                    event_name = event_name,
+                    event_date = event_date,
+                    event_description = event_description
+                )
+                event.save()
+                some_data_to_dump = model_to_dict(event)
+            else:
+                some_data_to_dump["Error:"] = "not all event parameters specified"
+
+        except ValueError:
+            some_data_to_dump["Error:"] = "creation failed"  
+    else:
+        some_data_to_dump["Error:"] = "Invalid method: POST only"
+
+    return JsonResponse(some_data_to_dump)
+
+@csrf_exempt
+def event_delete_api(request):
+    some_data_to_dump = {}
+    if request.method == "GET":
+        try:
+            event_id = request.GET.get('event_id')
+            uuid.UUID(str(event_id))
+            if event_id:
+                if Event.objects.filter(pk = event_id).count() != 0:
+                    event = Event.objects.get(pk = event_id )                 
+                    some_data_to_dump = model_to_dict(event)
+                    some_data_to_dump["event succesfully deleted"] = True
+                    event.delete()                
+                else:
+                    some_data_to_dump["Error:"] = "Invalid Event ID: no event found to delete"
+        except ValueError:
+            some_data_to_dump["Error:"] = "Invalid Event ID: no event found to delete"
+         
+    return JsonResponse(some_data_to_dump)

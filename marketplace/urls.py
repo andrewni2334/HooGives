@@ -8,6 +8,8 @@ urlpatterns = [
     path('api/v1/users/create/', views.user_create_api),
     path('api/v1/users/delete/', views.user_delete_api),
     path('api/v1/events/', views.event_api),
+    path('api/v1/events/create/', views.event_create_api),
+    path('api/v1/events/delete/', views.event_delete_api)
 
 
 
