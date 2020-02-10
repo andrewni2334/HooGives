@@ -7,6 +7,11 @@ class User(models.Model):
     last_name = models.CharField(max_length = 100)
     phone_number = models.CharField(max_length = 14)
     email = models.CharField(max_length = 100)
+    # @classmethod
+    # def create(cls):
+    #     user = cls(user_id=uuid.uuid4().hex)
+    #     # do something with the book
+    #     return user
 
 class Event(models.Model):
     event_id = models.UUIDField(primary_key=True, default = uuid.uuid4, unique = True)

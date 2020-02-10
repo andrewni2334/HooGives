@@ -7,6 +7,11 @@ from .models import User, Event
 import json
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
+# from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth import login, authenticate
+import uuid
+
+
 
 @csrf_exempt
 def user_api(request):
@@ -53,8 +58,72 @@ def user_api(request):
         except ValueError:
             some_data_to_dump["Error:"] = "Invalid User ID: no user found to retrieve info"
        
+    
+    return JsonResponse(some_data_to_dump)
+
+
+@csrf_exempt
+def user_create_api(request):
+    some_data_to_dump = {}
+
+    if request.method == 'POST':
+        
+        try:
+
+            first_name = request.POST.get('first_name')
+            
+            last_name = request.POST.get('last_name')
+            
+            phone_number = request.POST.get("phone_number")
+            
+            email = request.POST.get("email")
+
+            some_data_to_dump["values"] = [first_name , last_name , phone_number , email]
+
+            if(first_name and last_name and phone_number and email):
+                user = User.objects.create(
+                    first_name = first_name,
+                    last_name = last_name,
+                    phone_number = phone_number,
+                    email = email
+                )
+                user.save()
+                some_data_to_dump = model_to_dict(user)
+            else:
+                some_data_to_dump["Error:"] = "Invalid User ID: not all user parameters specified"
+
+        except ValueError:
+            some_data_to_dump["Error:"] = "Invalid User ID: creation failed"
+    
+    else:
+        some_data_to_dump["Error:"] = "Invalid method: POST only"
+
+
+    return JsonResponse(some_data_to_dump)
+
+@csrf_exempt
+def user_delete_api(request):
+    some_data_to_dump = {}
+
+    if request.method == "GET":
+        try:
+            user_id = request.GET.get('user_id')
+            uuid.UUID(str(user_id))
+            if user_id:
+                if User.objects.filter(pk = user_id).count() != 0:
+                    user = User.objects.get(pk = user_id )
+                    
+                    some_data_to_dump = model_to_dict(user)
+                    user.delete()
+                    
+                else:
+                    some_data_to_dump["Error:"] = "Invalid User ID: no user found to delete"
+        except ValueError:
+            some_data_to_dump["Error:"] = "Invalid User ID: no user found to retrieve info"
+
             
     return JsonResponse(some_data_to_dump)
+
 
 
 @csrf_exempt
