@@ -36,3 +36,35 @@ curl --location --request POST 'http://localhost:8001/api/v1/users/' \
 curl --location --request GET 'http://localhost:8001/api/v1/users/delete/' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'user_id=<insert-user-id>'
+  
+
+## Event Model
+
+### Reading:
+
+curl --location --request GET 'http://localhost:8001/api/v1/events/' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'event_id=<insert-event-id>'
+
+### Writing:
+
+curl --location --request POST 'http://localhost:8001/api/v1/events/create/' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'event_name=<insert-event-name>' \
+--data-urlencode 'event_date=<insert-event-date>' \
+--data-urlencode 'event_description=<insert-event-description>' \
+
+### Updating:
+
+curl --location --request POST 'http://localhost:8001/api/v1/events/' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'event_name=<insert-event-name>' \
+--data-urlencode 'event_date=<insert-event-date>' \
+--data-urlencode 'event_description=<insert-event-description>' \
+--data-urlencode 'event_id=<insert-event-id>'
+
+### Deleting:
+
+curl --location --request GET 'http://localhost:8001/api/v1/events/delete/' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'event_id=<insert-event-id>'
