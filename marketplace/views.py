@@ -90,10 +90,10 @@ def user_create_api(request):
                 user.save()
                 some_data_to_dump = model_to_dict(user)
             else:
-                some_data_to_dump["Error:"] = "Invalid User ID: not all user parameters specified"
+                some_data_to_dump["Error:"] = "not all user parameters specified"
 
         except ValueError:
-            some_data_to_dump["Error:"] = "Invalid User ID: creation failed"
+            some_data_to_dump["Error:"] = "creation failed"
     
     else:
         some_data_to_dump["Error:"] = "Invalid method: POST only"
@@ -114,12 +114,13 @@ def user_delete_api(request):
                     user = User.objects.get(pk = user_id )
                     
                     some_data_to_dump = model_to_dict(user)
+                    some_data_to_dump["user succesfully deleted"] = True
                     user.delete()
                     
                 else:
                     some_data_to_dump["Error:"] = "Invalid User ID: no user found to delete"
         except ValueError:
-            some_data_to_dump["Error:"] = "Invalid User ID: no user found to retrieve info"
+            some_data_to_dump["Error:"] = "Invalid User ID: no user found to delete"
 
             
     return JsonResponse(some_data_to_dump)
