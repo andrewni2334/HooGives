@@ -2,7 +2,9 @@
 
 Hoo Gives is a marketplace website application that allows UVA organizations to post philanthropy and community service events for all students to learn more about and get involved in.  Removing the hassle of passing out flyers and sending out Facebook posts to a select number of people, this application aims to efficiently provide an aggregation of events hosted by verified university organizations for all students to join in on the good cause.  How it works: 1) Organization owners and executive members post philanthropy and community service events coming up soon onto the discussion board, and 2) UVA students are able to browse through, learn more, and potentially join events that they are interested in participating in right in the marketplace.
 
-## API's (how to call)
+# API's (how to call)
+
+## User Model
 
 ### Reading:
 
